@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideShowApp2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +18,146 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohA-UG-jfL">
+                                <rect key="frame" x="145" y="434" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="65" y="434" width="32" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="pushnextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tem-px-Lky"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOo-0e-gkg">
+                                <rect key="frame" x="357" y="434" width="74" height="30"/>
+                                <state key="normal" title="Play / Stop"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="253" y="434" width="74" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="571" y="434" width="74" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="pushplayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yGi-kh-3vp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpw-LW-8FS">
+                                <rect key="frame" x="264" y="434" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="159" y="434" width="34" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="383" y="434" width="34" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="pushbackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zIB-9C-SL0"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hIE-ER-1Na">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="332"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hIE-ER-1Na" secondAttribute="height" multiplier="320:160" id="Rnl-Uz-wTW"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Rnl-Uz-wTW"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="332"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Rnl-Uz-wTW"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfZ-F3-GeV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="326"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="392" height="326"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="76" y="54" width="665" height="326"/>
+                                </variation>
+                                <connections>
+                                    <action selector="pushimageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kqm-aC-xtg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="hIE-ER-1Na" secondAttribute="trailing" constant="50" id="vjc-Br-Y4x"/>
+                            <constraint firstItem="hIE-ER-1Na" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="wCz-Pu-AWb"/>
+                            <constraint firstItem="hIE-ER-1Na" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="10" id="wad-TF-HEw"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vjc-Br-Y4x"/>
+                                <exclude reference="wCz-Pu-AWb"/>
+                                <exclude reference="wad-TF-HEw"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="vjc-Br-Y4x"/>
+                                <include reference="wCz-Pu-AWb"/>
+                                <include reference="wad-TF-HEw"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="Lpw-LW-8FS" id="0Zs-Tn-f9P"/>
+                        <outlet property="imageview" destination="hIE-ER-1Na" id="plj-um-twh"/>
+                        <outlet property="nextButton" destination="ohA-UG-jfL" id="9PJ-j6-WMO"/>
+                        <outlet property="playButton" destination="eOo-0e-gkg" id="WuR-iA-Z8G"/>
+                        <segue destination="pAq-bJ-n4f" kind="presentation" identifier="segueSlideView" id="KaY-G8-nbI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="258" y="276"/>
+        </scene>
+        <!--Slide View Controller-->
+        <scene sceneID="Y4b-1p-tam">
+            <objects>
+                <viewController storyboardIdentifier="snatch" id="pAq-bJ-n4f" customClass="SlideViewController" customModule="SlideShowApp2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4ED-se-dpp"/>
+                        <viewControllerLayoutGuide type="bottom" id="wm7-cs-tIL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZJu-0D-NEs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdW-8Q-UDl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wd0-7w-Zd7">
+                                <rect key="frame" x="283" y="470" width="34" height="30"/>
+                                <state key="normal" title="back"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="183" y="466" width="34" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="pushbackbutton:" destination="pAq-bJ-n4f" eventType="touchUpInside" id="zqR-oU-pfY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageview" destination="gdW-8Q-UDl" id="fjN-zj-1zR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FFw-8h-eeG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957" y="276"/>
         </scene>
     </scenes>
 </document>
