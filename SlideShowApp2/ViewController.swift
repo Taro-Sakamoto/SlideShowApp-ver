@@ -87,6 +87,7 @@ SlideViewControllerDelegate{
         }
         showimage()
     }
+    //戻るボタン
     
     @IBAction func pushbackButton(sender: AnyObject) {
         
@@ -95,13 +96,14 @@ SlideViewControllerDelegate{
         }
         if displayimageNum == 1 {
             
-            displayimageNum == ImageMaxCount
+            displayimageNum = ImageMaxCount
         } else {
             displayimageNum -= 1
         }
-        showimage()
+      showimage()
     }
     
+
     
     
     @IBAction func pushimageButton(sender: AnyObject) {
