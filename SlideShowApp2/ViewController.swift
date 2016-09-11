@@ -114,6 +114,8 @@ SlideViewControllerDelegate{
     @IBAction func pushplayButton(sender: AnyObject) {
         
         isPlay = !isPlay
+        nextButton.enabled = !isPlay
+        backButton.enabled = !isPlay
         
         if isPlay == true {
             //再生
