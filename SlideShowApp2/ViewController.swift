@@ -50,6 +50,8 @@ SlideViewControllerDelegate{
     
     
     func showimage(){
+        
+        
         let image = UIImage.init(named:displayimageNum.description + ".jpg")
         imageview.image = image
     }
@@ -64,6 +66,14 @@ SlideViewControllerDelegate{
         
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(Delay * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
+            
+            
+            if self.isPlay == false {
+                return
+            }
+            
+
+            
             if self.displayimageNum == self.ImageMaxCount {
                 self.displayimageNum = 1
             } else {
